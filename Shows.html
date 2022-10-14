@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coba Cinema</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
+      </head>
+      
+      <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <img src="images/logo.png" class="navbar-brand" class="img-fluid" width="8%" height:auto; alt="Logo">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Promos
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Coming Soon
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Registration</a>
+              </li>
+                </ul>
+                </form>
+               </div>
+              </nav>
+              <div class="container">
+      
+                <div class="row">
+                    <div class="col">
+                        <h1 style="text-align: center;">Shows that ON AIR</h1>
+                        <p style="text-align: center;">"Currently Air Right Now"</p>
+                    </div>
+                </div>
+        
+                <br>
+                <body style="background: #ffffff; font-family: Verdana; font-size: 16px">
+                  <span style="font-size: 16px">Cinema Location:</span>
+                  <select id="dropdown_selector" style="width: 190px">
+                    <option value="content1">Bekasi</option>
+                    <option selected value="content2">Tangerang</option>
+                    <option value="content3">Cikarang</option>
+                  </select>
+                  <br />
+                  <br />
+                  Movies :
+                  <div id="contentarea" style="font-size: 16px">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <img src="images/shows_poster1.png" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">THE QUINTESSENTIAL QUINTUPLETS THE MOVIE</h5>
+                            <p class="card-text"> Love Story between Fuutaro and the Quintuplets of Nakano</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="card">
+                          <img src="images/shows_poster2.png" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">ONE PIECE: RED</h5>
+                            <p class="card-text">ONE PIECE IS REAL</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="card">
+                        <img src="images/shows_poster3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Tenki no Ko</h5>
+                          <p class="card-text"> Love Story that changing the face of Tokyo</p>
+                          <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+              
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                  <script>
+                    $(document).ready(function () {
+                      $("#dropdown_selector").change(function () {
+                        var option = $(this).find("option:selected").val();
+                        if (option == "content1") {
+                          $.ajax({
+                            url: "content1.html",
+                            success: function (result) {
+                              $("#contentarea").html(result);
+                            },
+                          });
+                        } else if (option == "content2") {
+                          $.ajax({
+                            url: "content2.html",
+                            success: function (result) {
+                              $("#contentarea").html(result);
+                            },
+                          });
+                        } else {
+                          $.ajax({
+                            url: "content3.html",
+                            success: function (result) {
+                              $("#contentarea").html(result);
+                            },
+                          });
+                        }
+                      });
+                    });
+                  </script>
+                </body>
+              </html>
+              
